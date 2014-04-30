@@ -1,0 +1,19 @@
+.row.fluid
+  .span3
+    %ul.media-list#failed
+      %li
+        %h1 Failed Charges
+      - @c_failed.each do |charge|
+        %li.item(style="background-color:#FF0000")= charge_info(charge)
+  .span3
+    %ul.media-list#disputed
+      %li
+        %h1 Disputed Charges
+      - @c_disputed.each do |charge|
+        %li.item(style="background-color:#FF5400")= charge_info(charge)
+  .span3
+    %ul.media-list#succeed
+      %li
+        %h1 Successful Charges
+      - @c_succeed.each do |charge|
+        %li.item= charge_info(charge)
